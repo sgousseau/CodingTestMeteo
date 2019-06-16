@@ -13,28 +13,29 @@ enum NetworkError: Error {
     case invalidStatusCode(status: Int)
     case invalidResponse(url: String)
     case noData(url: String)
+    case serialization(error: Error)
 }
 
 protocol NetworkService {
-    func get(route: String, callback: ((Result<Data, Error>) -> Void)?)
+    func get<T>(_ type: T.Type, route: String, callback: ((Result<T, Error>) -> Void)?) where T: Decodable
 }
 
 typealias DefaultNetworkService = URLSessionNetwork
 
 class AlamofireNetwork: NetworkService {
-    func get(route: String, callback: ((Result<Data, Error>) -> Void)?) {
+    func get<T>(_ type: T.Type, route: String, callback: ((Result<T, Error>) -> Void)?) where T: Decodable {
         callback?(Result.failure(ServiceError.notImplemented(service: "Alamofire")))
     }
 }
 
 class JustNetwork: NetworkService {
-    func get(route: String, callback: ((Result<Data, Error>) -> Void)?) {
+    func get<T>(_ type: T.Type, route: String, callback: ((Result<T, Error>) -> Void)?) where T: Decodable {
         callback?(Result.failure(ServiceError.notImplemented(service: "JustNetwork")))
     }
 }
 
 class AnyOtherNetwork: NetworkService {
-    func get(route: String, callback: ((Result<Data, Error>) -> Void)?) {
+    func get<T>(_ type: T.Type, route: String, callback: ((Result<T, Error>) -> Void)?) where T: Decodable {
         callback?(Result.failure(ServiceError.notImplemented(service: "AnyOtherNetwork")))
     }
 }
@@ -51,8 +52,8 @@ class URLSessionNetwork: NetworkService {
         session = URLSession(configuration: sessionCfg)
     }
     
-    ///Execute une requete get standard
-    func get(route: String, callback: ((Result<Data, Error>) -> Void)?) {
+    ///Execute une requete get standard, ne fonctionne pas pour un get sans data retournée
+    func get<T>(_ type: T.Type, route: String, callback: ((Result<T, Error>) -> Void)?) where T: Decodable {
         print(route)
         //Gestion simpliste pour ce wrapper, on clean simplement la requete precedente si il y a.
         if let task = _currentTask { task.cancel() }
@@ -65,7 +66,12 @@ class URLSessionNetwork: NetworkService {
                     if let r = response as? HTTPURLResponse {
                         if 200 ... 299 ~= r.statusCode {
                             if let data = data {
-                                callback?(Result.success(data))
+                                do {
+                                   let model = try JSONDecoder().decode(type, from: data)
+                                    callback?(Result.success(model))
+                                } catch {
+                                    callback?(Result.failure(NetworkError.serialization(error: error)))
+                                }
                             } else {
                                 callback?(Result.failure(NetworkError.noData(url: route)))
                             }
