@@ -18,12 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="01d" translatesAutoresizingMaskIntoConstraints="NO" id="txV-QI-j57">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="01d" translatesAutoresizingMaskIntoConstraints="NO" id="txV-QI-j57">
                                 <rect key="frame" x="87" y="248" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="IQx-J5-5pQ"/>
                                     <constraint firstAttribute="width" constant="240" id="Xg9-hj-5DG"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="logo"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -60,7 +63,7 @@
                                     <constraint firstAttribute="height" constant="80" id="7b7-1d-fL6"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="weatherIcon"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="logo"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POX-wt-KOJ">
@@ -231,6 +234,10 @@
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="8Uv-8J-3Xg"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="WLB-RH-nij"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="stack"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="fade"/>
+                                </userDefinedRuntimeAttributes>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="67S-Ap-uuh">
                                 <rect key="frame" x="20" y="366.66666666666674" width="374" height="289.33333333333326"/>
@@ -261,15 +268,7 @@
                                                         <fragment>
                                                             <string key="content">{day}
 {hour}h
-</string>
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.41317195600000001" green="0.41317195600000001" blue="0.41317195600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <font key="NSFont" size="24" name="Arial-Black"/>
-                                                                <font key="NSOriginalFont" size="24" name="Arial-Black"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                        <fragment content="{temp}°">
+{temp}°</string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.41317195600000001" green="0.41317195600000001" blue="0.41317195600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <font key="NSFont" size="24" name="Arial-Black"/>

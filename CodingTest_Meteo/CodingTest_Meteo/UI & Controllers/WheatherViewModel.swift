@@ -14,7 +14,6 @@ import RxCocoa
 class WeatherViewModel {
     
     let manager = WeatherManager()
-    var current: Forecast?
     var forecast: [Forecast]?
     
     var isLoading = ActivityIndicator()
@@ -23,7 +22,6 @@ class WeatherViewModel {
     
     init() {
         manager.load()
-        current = manager.current
         forecast = manager.forecast
         
         shouldRefresh
@@ -34,27 +32,27 @@ class WeatherViewModel {
     }
     
     var tempText: String {
-        return "Paris\n\(current?.main.temp ?? 0)°"
+        return "Paris\n\(forecast?.first?.main.temp ?? 0)°"
     }
     
     var windText: String {
-        return "\(current?.wind?.speed ?? 0) m/s"
+        return "\(forecast?.first?.wind?.speed ?? 0) m/s"
     }
     
     var cloudsText: String {
-        return "\(current?.clouds?.all ?? 0) %"
+        return "\(forecast?.first?.clouds?.all ?? 0) %"
     }
     
     var humidityText: String {
-        return "\(current?.main.humidity ?? 0) %"
+        return "\(forecast?.first?.main.humidity ?? 0) %"
     }
     
     var pressureText: String {
-        return "\(Int(current?.main.pressure ?? 0.0) ) hpa"
+        return "\(Int(forecast?.first?.main.pressure ?? 0.0) ) hpa"
     }
     
     func currentWeatherIcon() -> UIImage? {
-        return UIImage(named: current?.weather.first?.icon ?? "")
+        return UIImage(named: forecast?.first?.weather.first?.icon ?? "")
     }
     
     func weatherIcon(weather: Weather) -> UIImage? {
@@ -91,7 +89,7 @@ class WeatherViewModel {
     
     func detailCollectionViewCellText(pattern: NSAttributedString, forecast: Forecast? = nil) -> NSAttributedString {
         
-        guard let model = forecast ?? current else {
+        guard let model = forecast ?? self.forecast?.first else {
             return NSAttributedString()
         }
         
@@ -110,13 +108,16 @@ class WeatherViewModel {
     func refreshData() {
         _byDays = nil
         
-        manager.rx.current()
+        manager.rx.forecast()
             .retry(3)
             .trackActivity(isLoading)
             .map(Optional.init)
             .retryOnBecomesReachable(nil, reachabilityService: try! DefaultReachabilityService())
             .unwrap()
-            .do(onNext: { _ in self.manager.save() })
+            .do(onNext: { [unowned self] _ in
+                self.forecast = self.manager.forecast
+                self.manager.save()
+            })
             .subscribe()
             .disposed(by: bag)
     }

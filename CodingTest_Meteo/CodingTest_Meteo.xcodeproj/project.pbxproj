@@ -145,12 +145,11 @@
 		5CBDA60C22B6880300CE7A9B /* CodingTest_Meteo */ = {
 			isa = PBXGroup;
 			children = (
+				5CBDA60D22B6880300CE7A9B /* AppDelegate.swift */,
 				5CBDA62D22B688A800CE7A9B /* UI & Controllers */,
 				5CBDA63122B688E800CE7A9B /* Models & Managers */,
 				5CBDA65122B699E900CE7A9B /* Misc & Helpers */,
 				5CBDA63022B688E000CE7A9B /* Resources */,
-				5CBDA60D22B6880300CE7A9B /* AppDelegate.swift */,
-				5CBDA61622B6880400CE7A9B /* LaunchScreen.storyboard */,
 			);
 			path = CodingTest_Meteo;
 			sourceTree = "<group>";
@@ -167,6 +166,7 @@
 		5CBDA62D22B688A800CE7A9B /* UI & Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5CBDA61622B6880400CE7A9B /* LaunchScreen.storyboard */,
 				5CBDA61122B6880300CE7A9B /* Main.storyboard */,
 				5CBDA60F22B6880300CE7A9B /* SplashScreenViewController.swift */,
 				5CBDA63B22B68ECB00CE7A9B /* FirstViewController.swift */,
