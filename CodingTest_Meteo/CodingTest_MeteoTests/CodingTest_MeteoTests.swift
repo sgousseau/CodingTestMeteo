@@ -18,7 +18,7 @@ class CodingTest_MeteoTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
+    
     func testApi() {
         let exp = expectation(description: "forecast")
         
@@ -28,16 +28,40 @@ class CodingTest_MeteoTests: XCTestCase {
         
         manager.current(completion: { (forecast) in
             current = forecast
-            
+            exp.fulfill()
         }) { (err) in
             error = err
         }
         
-        wait(for: [exp], timeout: 10.0)
+        wait(for: [exp], timeout: 5.0)
         XCTAssertNil(error)
         XCTAssertNotNil(current)
     }
 
+    func testStorage() {
+        let exp = expectation(description: "save")
+        
+        let manager = WeatherManager()
+        var current: Forecast?
+        var error: Error?
+        
+        manager.current(completion: { (forecast) in
+            current = forecast
+            exp.fulfill()
+        }) { (err) in
+            error = err
+        }
+        
+        wait(for: [exp], timeout: 5.0)
+        XCTAssertNil(error)
+        XCTAssertNotNil(current)
+        
+        manager.save()
+        let manager2 = WeatherManager()
+        manager2.load()
+        XCTAssertNotNil(manager2.current)
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
@@ -46,3 +70,4 @@ class CodingTest_MeteoTests: XCTestCase {
     }
 
 }
+

@@ -10,6 +10,9 @@
 
 import Foundation
 
+struct Forecasts: Codable {
+    var list: [Forecast]
+}
 // MARK: - ForecastElement
 struct Forecast: Codable {
     let dt: Int

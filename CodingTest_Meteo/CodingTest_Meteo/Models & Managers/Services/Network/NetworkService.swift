@@ -67,6 +67,7 @@ class URLSessionNetwork: NetworkService {
                         if 200 ... 299 ~= r.statusCode {
                             if let data = data {
                                 do {
+                                    print(String(data: data, encoding: .utf8))
                                    let model = try JSONDecoder().decode(type, from: data)
                                     callback?(Result.success(model))
                                 } catch {

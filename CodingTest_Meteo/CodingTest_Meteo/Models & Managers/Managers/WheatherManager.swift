@@ -30,11 +30,11 @@ class WeatherManager {
     }
     
     func forecast(completion: @escaping ([Forecast]) -> Void, failure: @escaping (Error) -> Void) -> Void {
-        network.get([Forecast].self, route: endpoints.forecast.route) { (result) in
+        network.get(Forecasts.self, route: endpoints.forecast.configuredWith(args: "Paris").route) { (result) in
             switch result {
             case .success(let model):
-                self.forecast = model
-                completion(model)
+                self.forecast = model.list
+                completion(model.list)
             case .failure(let error):
                 failure(error)
             }
