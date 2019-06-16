@@ -1,0 +1,6 @@
+framework module Pods_CodingTest_Meteo {
+  umbrella header "Pods-CodingTest_Meteo-umbrella.h"
+
+  export *
+  module * { export * }
+}
