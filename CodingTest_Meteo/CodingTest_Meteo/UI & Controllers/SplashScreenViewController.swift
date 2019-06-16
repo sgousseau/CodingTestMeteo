@@ -8,13 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SplashScreenViewController: UIViewController {
 
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    override func viewDidAppear(_ animated: Bool) {
+        performSegue(withIdentifier: R.segue.splashScreenViewController.splashToFirst, sender: self)
+    }
 }
 
