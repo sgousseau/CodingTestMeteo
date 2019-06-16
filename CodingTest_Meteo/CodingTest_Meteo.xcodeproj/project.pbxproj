@@ -43,6 +43,10 @@
 		5CBDA62222B6880400CE7A9B /* CodingTest_MeteoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingTest_MeteoTests.swift; sourceTree = "<group>"; };
 		5CBDA62422B6880400CE7A9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CBDA63422B68B9D00CE7A9B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		5CBDA63722B68C5D00CE7A9B /* MavenPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MavenPro-Bold.ttf"; sourceTree = "<group>"; };
+		5CBDA63822B68C5D00CE7A9B /* MavenPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MavenPro-Regular.ttf"; sourceTree = "<group>"; };
+		5CBDA63922B68C5D00CE7A9B /* MavenPro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MavenPro-Medium.ttf"; sourceTree = "<group>"; };
+		5CBDA63A22B68C5D00CE7A9B /* MavenPro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MavenPro-Black.ttf"; sourceTree = "<group>"; };
 		7D642A403156F1A5BA93552E /* Pods_CodingTest_Meteo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodingTest_Meteo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8DD6C4693B399BA092FB8BF /* Pods-CodingTest_MeteoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodingTest_MeteoTests.debug.xcconfig"; path = "Target Support Files/Pods-CodingTest_MeteoTests/Pods-CodingTest_MeteoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E847B8C7220427D36B8CFA40 /* Pods-CodingTest_Meteo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodingTest_Meteo.release.xcconfig"; path = "Target Support Files/Pods-CodingTest_Meteo/Pods-CodingTest_Meteo.release.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 		5CBDA63022B688E000CE7A9B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5CBDA63622B68C4B00CE7A9B /* Fonts */,
 				5CBDA63422B68B9D00CE7A9B /* R.generated.swift */,
 				5CBDA61922B6880400CE7A9B /* Info.plist */,
 				5CBDA61422B6880400CE7A9B /* Assets.xcassets */,
@@ -169,6 +174,17 @@
 			children = (
 			);
 			path = "Models & Managers";
+			sourceTree = "<group>";
+		};
+		5CBDA63622B68C4B00CE7A9B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5CBDA63A22B68C5D00CE7A9B /* MavenPro-Black.ttf */,
+				5CBDA63722B68C5D00CE7A9B /* MavenPro-Bold.ttf */,
+				5CBDA63922B68C5D00CE7A9B /* MavenPro-Medium.ttf */,
+				5CBDA63822B68C5D00CE7A9B /* MavenPro-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
