@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import RxSwift
+import RxCocoa
 
 class WeatherViewModel {
     
@@ -17,6 +18,7 @@ class WeatherViewModel {
     var forecast: [Forecast]?
     
     var isLoading = ActivityIndicator()
+    var shouldRefresh = PublishRelay<Void>()
     var bag: DisposeBag! = DisposeBag()
     
     init() {
@@ -24,10 +26,15 @@ class WeatherViewModel {
         current = manager.current
         forecast = manager.forecast
         
+        shouldRefresh
+            .bind { [unowned self] in
+                self.refreshData()
+            }
+            .disposed(by: bag)
     }
     
     var tempText: String {
-        return "\(current?.main.temp ?? 0)°"
+        return "Paris\n\(current?.main.temp ?? 0)°"
     }
     
     var windText: String {
@@ -50,30 +57,61 @@ class WeatherViewModel {
         return UIImage(named: current?.weather.first?.icon ?? "")
     }
     
-    func detailCollectionViewCellText(forecast: Forecast? = nil) -> NSAttributedString {
+    func weatherIcon(weather: Weather) -> UIImage? {
+        return UIImage(named: weather.icon)
+    }
+    
+    func forecastIcon(forecast: Forecast) -> UIImage? {
+        guard let weather = forecast.weather.first else {
+            return nil
+        }
+        return weatherIcon(weather: weather)
+    }
+    
+    private var _byDays: [[Forecast]]!
+    var fiveDaysForecast: [[Forecast]] {
+        if let array = _byDays, !array.isEmpty {
+            return array
+        }
+        
+        if let forecast = forecast {
+            _byDays = Dictionary(grouping: forecast, by: { (elt) -> String in
+                DateFormatter.Formatter.monthDay.string(from: Date(timeIntervalSince1970: TimeInterval(elt.dt))).capitalized
+            })
+            .sorted(by: { (kv1, kv2) -> Bool in
+                kv1.key < kv2.key
+            })
+            .map({ $0.value })
+            
+            return _byDays
+        }
+        
+        return []
+    }
+    
+    func detailCollectionViewCellText(pattern: NSAttributedString, forecast: Forecast? = nil) -> NSAttributedString {
         
         guard let model = forecast ?? current else {
             return NSAttributedString()
         }
         
-        let pattern = "{hour}h - {temp}°\n{wind} m/s\n{pressure} hpa"
-        
-        let copy = NSMutableAttributedString(string: pattern)
+        let copy = pattern.mutableCopy() as! NSMutableAttributedString
         let mutableString = copy.mutableString
         let date = Date(timeIntervalSince1970: TimeInterval(model.dt))
+        let day = DateFormatter.Formatter.dayDateString.string(from: date).capitalized
         let hour = DateFormatter.Formatter.hour.string(from: date)
-        let pressure = "\(Int(model.main.pressure) ) hpa"
-        let wind = "\(model.wind?.speed ?? 0) m/s"
-        let temp = "\(model.main.temp)°"
+        let temp = "\(model.main.temp)"
+        mutableString.replaceOccurrences(of: "{day}", with: day, options: .backwards, range: mutableString.range(of: "{day}"))
         mutableString.replaceOccurrences(of: "{hour}", with: hour, options: .backwards, range: mutableString.range(of: "{hour}"))
         mutableString.replaceOccurrences(of: "{temp}", with: "\(temp)", options: .backwards, range: mutableString.range(of: "{temp}"))
-        mutableString.replaceOccurrences(of: "{wind}", with: "\(wind)", options: .backwards, range: mutableString.range(of: "{wind}"))
-        mutableString.replaceOccurrences(of: "{pressure}", with: "\(pressure)", options: .backwards, range: mutableString.range(of: "{pressure}"))
         return copy
     }
     
     func refreshData() {
+        _byDays = nil
+        
         manager.rx.current()
+            .retry(3)
             .trackActivity(isLoading)
             .map(Optional.init)
             .retryOnBecomesReachable(nil, reachabilityService: try! DefaultReachabilityService())

@@ -49,6 +49,7 @@ class URLSessionNetwork: NetworkService {
     
     init() {
         sessionCfg = URLSessionConfiguration.default
+        sessionCfg.timeoutIntervalForRequest = 10.0
         session = URLSession(configuration: sessionCfg)
     }
     
@@ -67,10 +68,11 @@ class URLSessionNetwork: NetworkService {
                         if 200 ... 299 ~= r.statusCode {
                             if let data = data {
                                 do {
-                                    print(String(data: data, encoding: .utf8))
+                                    print(String(data: data, encoding: .utf8) ?? "")
                                    let model = try JSONDecoder().decode(type, from: data)
                                     callback?(Result.success(model))
                                 } catch {
+                                    print(error)
                                     callback?(Result.failure(NetworkError.serialization(error: error)))
                                 }
                             } else {

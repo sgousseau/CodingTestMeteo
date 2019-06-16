@@ -10,15 +10,31 @@ import UIKit
 
 class SplashScreenViewController: UIViewController {
 
+    var viewModel = WeatherViewModel()
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        viewModel.isLoading
+            .skip(1)
+            .drive(onNext: { [unowned self] (loading) in
+                if !loading {
+                    self.performSegue(withIdentifier: R.segue.splashScreenViewController.splashToFirst, sender: self)
+                }
+            })
+            .disposed(by: viewModel.bag)
+        
+        viewModel.refreshData()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        performSegue(withIdentifier: R.segue.splashScreenViewController.splashToFirst, sender: self)
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = R.segue.splashScreenViewController.splashToFirst(segue: segue)?.destination {
+            controller.viewModel = viewModel
+        }
     }
 }
 

@@ -10,8 +10,20 @@ import Foundation
 
 extension DateFormatter {
     struct Formatter {
-        static var detailDate: DateFormatter {
+        static var dayDateString: DateFormatter {
+            return DateFormatter(format: "E dd")
+        }
+        
+        static var monthDay: DateFormatter {
+            return DateFormatter(format: "MM/dd")
+        }
+        
+        static var dayString: DateFormatter {
             return DateFormatter(format: "EEEE")
+        }
+        
+        static var dayHourString: DateFormatter {
+            return DateFormatter(format: "EEEE H")
         }
         
         static var hour: DateFormatter {

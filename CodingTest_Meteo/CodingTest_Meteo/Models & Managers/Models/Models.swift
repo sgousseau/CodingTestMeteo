@@ -17,7 +17,7 @@ struct Forecasts: Codable {
 struct Forecast: Codable {
     let dt: Int
     let main: Main
-    let weather: [Weather] = []
+    let weather: [Weather]
     let clouds: Clouds?
     let wind: Wind?
     let rain: Rain?
@@ -60,8 +60,8 @@ struct Rain: Codable {
 // MARK: - Weather
 struct Weather: Codable {
     let id: Int
-    let main: MainWeatherCondition
-    let weatherDescription: WeatherDescription
+    let main: String
+    let weatherDescription: String
     let icon: String
     
     enum CodingKeys: String, CodingKey {
@@ -69,20 +69,6 @@ struct Weather: Codable {
         case weatherDescription = "description"
         case icon
     }
-}
-
-enum MainWeatherCondition: String, Codable {
-    case clear = "Clear"
-    case clouds = "Clouds"
-    case rain = "Rain"
-}
-
-enum WeatherDescription: String, Codable {
-    case brokenClouds = "broken clouds"
-    case clearSky = "clear sky"
-    case lightRain = "light rain"
-    case overcastClouds = "overcast clouds"
-    case scatteredClouds = "scattered clouds"
 }
 
 // MARK: - Wind

@@ -9,14 +9,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="MavenPro-Bold.ttf">
-            <string>MavenPro-Bold</string>
-        </array>
-        <array key="MavenPro-Regular.ttf">
-            <string>MavenPro-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Splash Screen View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -64,391 +56,278 @@
                             <imageView userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="01d" translatesAutoresizingMaskIntoConstraints="NO" id="m2w-Ed-2TA">
                                 <rect key="frame" x="167" y="60" width="80" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" identifier="height80" id="G8p-83-yx0"/>
-                                    <constraint firstAttribute="width" constant="80" identifier="width80" id="Z0c-KF-0vx"/>
+                                    <constraint firstAttribute="width" constant="80" id="5lZ-hL-KJ8"/>
+                                    <constraint firstAttribute="height" constant="80" id="7b7-1d-fL6"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="weatherIcon"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGw-Cs-oI7">
-                                <rect key="frame" x="0.0" y="531.5" width="414" height="310.5"/>
-                                <fontDescription key="fontDescription" name="MavenPro-Regular" family="Maven Pro" pointSize="25"/>
-                                <state key="normal" title="Prévisions de la semaine">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="parisText"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="1gV-DZ-IEk" kind="show" identifier="firstToDetail" id="hFe-9q-eqj"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POX-wt-KOJ">
-                                <rect key="frame" x="20" y="156" width="374" height="65.5"/>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">Paris
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POX-wt-KOJ">
+                                <rect key="frame" x="20" y="156" width="374" height="63"/>
+                                <string key="text">Paris
 {temp}°</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="0.7208636558164383" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" metaFont="system" size="28"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="28"/>
+                                <color key="textColor" red="0.41317195595854928" green="0.41317195595854928" blue="0.41317195595854928" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3q3-Fg-stV" customClass="UIScrollView">
-                                <rect key="frame" x="0.0" y="237.5" width="414" height="286"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="GJo-i1-JUv">
+                                <rect key="frame" x="87" y="249" width="240" height="112"/>
                                 <subviews>
-                                    <view alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7kc-Vd-RxF">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="286"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AwW-kA-N91">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="28"/>
                                         <subviews>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="67S-Ap-uuh">
-                                                <rect key="frame" x="0.0" y="156" width="414" height="130"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="130" id="N4Y-TV-eX3"/>
-                                                </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qbo-0V-4A2">
-                                                    <size key="itemSize" width="60" height="120"/>
-                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                    <inset key="sectionInset" minX="9" minY="0.0" maxX="8" maxY="0.0"/>
-                                                </collectionViewFlowLayout>
-                                                <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ForecastCollectionViewCell" id="uXn-Bi-4OA" customClass="ForecastCollectionViewCell" customModule="CodingTest_Meteo" customModuleProvider="target">
-                                                        <rect key="frame" x="9" y="5" width="60" height="120"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="120"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gWu-ur-scP">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="60" id="7Xd-kP-Fia"/>
-                                                                    </constraints>
-                                                                </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dLd-pk-ZuD">
-                                                                    <rect key="frame" x="0.0" y="60" width="60" height="60"/>
-                                                                    <attributedString key="attributedText">
-                                                                        <fragment content="{hour}">
-                                                                            <attributes>
-                                                                                <font key="NSFont" metaFont="smallSystem"/>
-                                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                            </attributes>
-                                                                        </fragment>
-                                                                        <fragment content="h - ">
-                                                                            <attributes>
-                                                                                <font key="NSFont" metaFont="smallSystem"/>
-                                                                                <font key="NSOriginalFont" metaFont="system" size="14"/>
-                                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                            </attributes>
-                                                                        </fragment>
-                                                                        <fragment content="{temp}">
-                                                                            <attributes>
-                                                                                <font key="NSFont" metaFont="smallSystem"/>
-                                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                            </attributes>
-                                                                        </fragment>
-                                                                        <fragment>
-                                                                            <string key="content">°
-</string>
-                                                                            <attributes>
-                                                                                <font key="NSFont" metaFont="smallSystem"/>
-                                                                                <font key="NSOriginalFont" metaFont="cellTitle"/>
-                                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                            </attributes>
-                                                                        </fragment>
-                                                                        <fragment content="{wind}">
-                                                                            <attributes>
-                                                                                <font key="NSFont" metaFont="smallSystem"/>
-                                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                            </attributes>
-                                                                        </fragment>
-                                                                        <fragment>
-                                                                            <string key="content"> m/s
-</string>
-                                                                            <attributes>
-                                                                                <font key="NSFont" metaFont="smallSystem"/>
-                                                                                <font key="NSOriginalFont" metaFont="cellTitle"/>
-                                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                            </attributes>
-                                                                        </fragment>
-                                                                        <fragment content="{pressure}">
-                                                                            <attributes>
-                                                                                <font key="NSFont" metaFont="smallSystem"/>
-                                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                            </attributes>
-                                                                        </fragment>
-                                                                        <fragment content=" h">
-                                                                            <attributes>
-                                                                                <font key="NSFont" metaFont="smallSystem"/>
-                                                                                <font key="NSOriginalFont" metaFont="cellTitle"/>
-                                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                            </attributes>
-                                                                        </fragment>
-                                                                        <fragment content="p">
-                                                                            <attributes>
-                                                                                <font key="NSFont" metaFont="smallSystem"/>
-                                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                            </attributes>
-                                                                        </fragment>
-                                                                        <fragment content="a">
-                                                                            <attributes>
-                                                                                <font key="NSFont" metaFont="smallSystem"/>
-                                                                                <font key="NSOriginalFont" metaFont="cellTitle"/>
-                                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                            </attributes>
-                                                                        </fragment>
-                                                                    </attributedString>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                        </view>
-                                                        <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="dLd-pk-ZuD" secondAttribute="bottom" id="3f4-xf-nZt"/>
-                                                            <constraint firstItem="gWu-ur-scP" firstAttribute="leading" secondItem="uXn-Bi-4OA" secondAttribute="leading" id="GBc-fz-cZd"/>
-                                                            <constraint firstItem="dLd-pk-ZuD" firstAttribute="top" secondItem="gWu-ur-scP" secondAttribute="bottom" id="SHK-s5-I0Q"/>
-                                                            <constraint firstAttribute="trailing" secondItem="dLd-pk-ZuD" secondAttribute="trailing" id="fGQ-ED-uaI"/>
-                                                            <constraint firstItem="gWu-ur-scP" firstAttribute="top" secondItem="uXn-Bi-4OA" secondAttribute="top" id="mYY-4b-n3G"/>
-                                                            <constraint firstItem="dLd-pk-ZuD" firstAttribute="leading" secondItem="uXn-Bi-4OA" secondAttribute="leading" id="tJy-B4-5wl"/>
-                                                            <constraint firstAttribute="trailing" secondItem="gWu-ur-scP" secondAttribute="trailing" id="xjN-L1-BT8"/>
-                                                        </constraints>
-                                                        <connections>
-                                                            <outlet property="weatherIcon" destination="gWu-ur-scP" id="oHQ-Hr-fXE"/>
-                                                            <outlet property="weatherText" destination="dLd-pk-ZuD" id="UIS-AP-9S2"/>
-                                                        </connections>
-                                                    </collectionViewCell>
-                                                </cells>
-                                                <connections>
-                                                    <outlet property="dataSource" destination="ViT-r4-ONB" id="K8Q-0R-fwF"/>
-                                                    <outlet property="delegate" destination="ViT-r4-ONB" id="EDj-25-xjf"/>
-                                                </connections>
-                                            </collectionView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARE-FK-AfY">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1Z-SB-Wzg">
-                                                        <rect key="frame" x="8" y="20" width="398" height="24"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="24" id="trV-MZ-Z13"/>
-                                                        </constraints>
-                                                        <attributedString key="attributedText">
-                                                            <fragment content="Vent:">
-                                                                <attributes>
-                                                                    <font key="NSFont" metaFont="system" size="20"/>
-                                                                    <font key="NSOriginalFont" metaFont="system" size="20"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YM6-Yw-bbp">
-                                                        <rect key="frame" x="8" y="52" width="398" height="24"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="24" id="91p-9W-Zg6"/>
-                                                        </constraints>
-                                                        <attributedString key="attributedText">
-                                                            <fragment content="Nuages:">
-                                                                <attributes>
-                                                                    <font key="NSFont" metaFont="system" size="20"/>
-                                                                    <font key="NSOriginalFont" metaFont="system" size="20"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oci-iD-Amy">
-                                                        <rect key="frame" x="8" y="84" width="398" height="24"/>
-                                                        <attributedString key="attributedText">
-                                                            <fragment content="Humidité:">
-                                                                <attributes>
-                                                                    <font key="NSFont" metaFont="system" size="20"/>
-                                                                    <font key="NSOriginalFont" metaFont="system" size="20"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqh-mU-Aex">
-                                                        <rect key="frame" x="8" y="116" width="398" height="24"/>
-                                                        <attributedString key="attributedText">
-                                                            <fragment content="Pression:">
-                                                                <attributes>
-                                                                    <font key="NSFont" metaFont="system" size="20"/>
-                                                                    <font key="NSOriginalFont" metaFont="system" size="20"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iao-ij-30l">
-                                                        <rect key="frame" x="8" y="20" width="398" height="24"/>
-                                                        <attributedString key="attributedText">
-                                                            <fragment content="{wind} ">
-                                                                <attributes>
-                                                                    <font key="NSFont" metaFont="system" size="20"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                            <fragment content="m/s">
-                                                                <attributes>
-                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" metaFont="system" size="14"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0e-vx-0s6">
-                                                        <rect key="frame" x="8" y="52" width="398" height="24"/>
-                                                        <attributedString key="attributedText">
-                                                            <fragment content="{clouds} ">
-                                                                <attributes>
-                                                                    <font key="NSFont" metaFont="system" size="20"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                            <fragment content="%">
-                                                                <attributes>
-                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" metaFont="system" size="14"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shf-SL-jCX">
-                                                        <rect key="frame" x="8" y="84" width="398" height="24"/>
-                                                        <attributedString key="attributedText">
-                                                            <fragment content="{humidity} ">
-                                                                <attributes>
-                                                                    <font key="NSFont" metaFont="system" size="20"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                            <fragment content="%">
-                                                                <attributes>
-                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" metaFont="system" size="14"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXs-es-ih6">
-                                                        <rect key="frame" x="8" y="116" width="398" height="24"/>
-                                                        <attributedString key="attributedText">
-                                                            <fragment content="{pressure} ">
-                                                                <attributes>
-                                                                    <font key="NSFont" metaFont="system" size="20"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                            <fragment content="hpa">
-                                                                <attributes>
-                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" metaFont="system" size="14"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="c0e-vx-0s6" secondAttribute="trailing" constant="8" id="4rx-nL-fcW"/>
-                                                    <constraint firstAttribute="height" constant="140" id="AOe-Lv-F9j"/>
-                                                    <constraint firstItem="Iao-ij-30l" firstAttribute="leading" secondItem="ARE-FK-AfY" secondAttribute="leading" constant="8" id="FL4-as-hWl"/>
-                                                    <constraint firstAttribute="trailing" secondItem="oci-iD-Amy" secondAttribute="trailing" constant="8" id="FMp-gU-Fas"/>
-                                                    <constraint firstItem="T1Z-SB-Wzg" firstAttribute="leading" secondItem="ARE-FK-AfY" secondAttribute="leading" constant="8" id="I7H-wN-Gjh"/>
-                                                    <constraint firstItem="shf-SL-jCX" firstAttribute="leading" secondItem="ARE-FK-AfY" secondAttribute="leading" constant="8" id="Izp-2P-GTf"/>
-                                                    <constraint firstAttribute="trailing" secondItem="IXs-es-ih6" secondAttribute="trailing" constant="8" id="Obw-7U-isa"/>
-                                                    <constraint firstItem="mqh-mU-Aex" firstAttribute="leading" secondItem="ARE-FK-AfY" secondAttribute="leading" constant="8" id="Qbo-yi-9l2"/>
-                                                    <constraint firstItem="YM6-Yw-bbp" firstAttribute="top" secondItem="Iao-ij-30l" secondAttribute="bottom" constant="8" id="RDj-IZ-xzk"/>
-                                                    <constraint firstAttribute="trailing" secondItem="T1Z-SB-Wzg" secondAttribute="trailing" constant="8" id="Tsy-la-FjT"/>
-                                                    <constraint firstItem="IXs-es-ih6" firstAttribute="leading" secondItem="ARE-FK-AfY" secondAttribute="leading" constant="8" id="Wlh-hv-J35"/>
-                                                    <constraint firstItem="mqh-mU-Aex" firstAttribute="top" secondItem="shf-SL-jCX" secondAttribute="bottom" constant="8" id="X1q-14-def"/>
-                                                    <constraint firstAttribute="trailing" secondItem="shf-SL-jCX" secondAttribute="trailing" constant="8" id="aiA-Pi-ZyM"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Iao-ij-30l" secondAttribute="trailing" constant="8" id="c0o-7D-I80"/>
-                                                    <constraint firstItem="oci-iD-Amy" firstAttribute="top" secondItem="c0e-vx-0s6" secondAttribute="bottom" constant="8" id="d5m-bK-cSj"/>
-                                                    <constraint firstItem="c0e-vx-0s6" firstAttribute="leading" secondItem="ARE-FK-AfY" secondAttribute="leading" constant="8" id="dZj-5f-Gi6"/>
-                                                    <constraint firstItem="Iao-ij-30l" firstAttribute="top" secondItem="ARE-FK-AfY" secondAttribute="top" constant="20" id="ebL-tK-2FS"/>
-                                                    <constraint firstItem="c0e-vx-0s6" firstAttribute="top" secondItem="Iao-ij-30l" secondAttribute="bottom" constant="8" id="foJ-Xy-ldD"/>
-                                                    <constraint firstAttribute="trailing" secondItem="mqh-mU-Aex" secondAttribute="trailing" constant="8" id="kkl-j1-hOR"/>
-                                                    <constraint firstItem="oci-iD-Amy" firstAttribute="leading" secondItem="ARE-FK-AfY" secondAttribute="leading" constant="8" id="l2m-YI-asa"/>
-                                                    <constraint firstAttribute="trailing" secondItem="YM6-Yw-bbp" secondAttribute="trailing" constant="8" id="mrO-Lw-UR0"/>
-                                                    <constraint firstItem="T1Z-SB-Wzg" firstAttribute="top" secondItem="ARE-FK-AfY" secondAttribute="top" constant="20" id="pgc-Z2-N3d"/>
-                                                    <constraint firstItem="YM6-Yw-bbp" firstAttribute="leading" secondItem="ARE-FK-AfY" secondAttribute="leading" constant="8" id="shn-7P-Ngp"/>
-                                                    <constraint firstItem="shf-SL-jCX" firstAttribute="top" secondItem="c0e-vx-0s6" secondAttribute="bottom" constant="8" id="tPs-tW-s0G"/>
-                                                    <constraint firstItem="IXs-es-ih6" firstAttribute="top" secondItem="shf-SL-jCX" secondAttribute="bottom" constant="8" id="xUa-RI-cXk"/>
-                                                </constraints>
-                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1Z-SB-Wzg">
+                                                <rect key="frame" x="0.0" y="0.0" width="154.5" height="28"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Vent:">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.41317195600000001" green="0.41317195600000001" blue="0.41317195600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <font key="NSFont" size="24" name="Arial-Black"/>
+                                                            <font key="NSOriginalFont" size="24" name="Arial-Black"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iao-ij-30l">
+                                                <rect key="frame" x="154.5" y="0.0" width="85.5" height="28"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="{wind} ">
+                                                        <attributes>
+                                                            <font key="NSFont" metaFont="system" size="20"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="m/s">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" metaFont="system" size="14"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="67S-Ap-uuh" firstAttribute="top" secondItem="ARE-FK-AfY" secondAttribute="bottom" constant="16" id="1zW-RN-UFA"/>
-                                            <constraint firstItem="ARE-FK-AfY" firstAttribute="top" secondItem="7kc-Vd-RxF" secondAttribute="top" id="9jl-kk-g4R"/>
-                                            <constraint firstAttribute="trailing" secondItem="ARE-FK-AfY" secondAttribute="trailing" id="A5w-FF-o4k"/>
-                                            <constraint firstItem="67S-Ap-uuh" firstAttribute="leading" secondItem="7kc-Vd-RxF" secondAttribute="leading" id="AaN-nT-2Qd"/>
-                                            <constraint firstItem="ARE-FK-AfY" firstAttribute="leading" secondItem="7kc-Vd-RxF" secondAttribute="leading" id="OyV-X1-owX"/>
-                                            <constraint firstAttribute="bottom" secondItem="67S-Ap-uuh" secondAttribute="bottom" id="TLa-sU-geG"/>
-                                            <constraint firstAttribute="trailing" secondItem="67S-Ap-uuh" secondAttribute="trailing" id="q6J-KK-6Z2"/>
-                                        </constraints>
-                                    </view>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FrG-DT-T5T">
+                                        <rect key="frame" x="0.0" y="28" width="240" height="28"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YM6-Yw-bbp">
+                                                <rect key="frame" x="0.0" y="0.0" width="149.5" height="28"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Nuages:">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.41317195600000001" green="0.41317195600000001" blue="0.41317195600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <font key="NSFont" size="24" name="Arial-Black"/>
+                                                            <font key="NSOriginalFont" size="24" name="Arial-Black"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0e-vx-0s6">
+                                                <rect key="frame" x="149.5" y="0.0" width="90.5" height="28"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="{clouds} ">
+                                                        <attributes>
+                                                            <font key="NSFont" metaFont="system" size="20"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="%">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" metaFont="system" size="14"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jKs-9K-5L9">
+                                        <rect key="frame" x="0.0" y="56" width="240" height="28"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oci-iD-Amy">
+                                                <rect key="frame" x="0.0" y="0.0" width="133" height="28"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Humidité:">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.41317195600000001" green="0.41317195600000001" blue="0.41317195600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <font key="NSFont" size="24" name="Arial-Black"/>
+                                                            <font key="NSOriginalFont" size="24" name="Arial-Black"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shf-SL-jCX">
+                                                <rect key="frame" x="133" y="0.0" width="107" height="28"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="{humidity} ">
+                                                        <attributes>
+                                                            <font key="NSFont" metaFont="system" size="20"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="%">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" metaFont="system" size="14"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="71f-6p-LDP">
+                                        <rect key="frame" x="0.0" y="84" width="240" height="28"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqh-mU-Aex">
+                                                <rect key="frame" x="0.0" y="0.0" width="119.5" height="28"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Pression:">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.41317195600000001" green="0.41317195600000001" blue="0.41317195600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <font key="NSFont" size="24" name="Arial-Black"/>
+                                                            <font key="NSOriginalFont" size="24" name="Arial-Black"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXs-es-ih6">
+                                                <rect key="frame" x="119.5" y="0.0" width="120.5" height="28"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="{pressure} ">
+                                                        <attributes>
+                                                            <font key="NSFont" metaFont="system" size="20"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="hpa">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" metaFont="system" size="14"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="7kc-Vd-RxF" secondAttribute="bottom" id="3H2-y9-UDD"/>
-                                    <constraint firstItem="7kc-Vd-RxF" firstAttribute="leading" secondItem="3q3-Fg-stV" secondAttribute="leading" id="6vM-gL-tex"/>
-                                    <constraint firstItem="7kc-Vd-RxF" firstAttribute="top" secondItem="3q3-Fg-stV" secondAttribute="top" id="Jdr-q4-ywP"/>
-                                    <constraint firstAttribute="trailing" secondItem="7kc-Vd-RxF" secondAttribute="trailing" id="Oqv-yB-WIl"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="8Uv-8J-3Xg"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="WLB-RH-nij"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="infos"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mZ-k8-fud">
-                                <rect key="frame" x="366" y="60" width="40" height="40"/>
+                            </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="67S-Ap-uuh">
+                                <rect key="frame" x="20" y="391" width="374" height="391"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="10" id="qbo-0V-4A2">
+                                    <size key="itemSize" width="80" height="130"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="9" minY="0.0" maxX="8" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ForecastCollectionViewCell" id="uXn-Bi-4OA" customClass="ForecastCollectionViewCell" customModule="CodingTest_Meteo" customModuleProvider="target">
+                                        <rect key="frame" x="9" y="0.0" width="80" height="130"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="130"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gWu-ur-scP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="7Xd-kP-Fia"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dLd-pk-ZuD">
+                                                    <rect key="frame" x="0.0" y="60" width="80" height="60"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment>
+                                                            <string key="content">{day}
+{hour}h
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.41317195600000001" green="0.41317195600000001" blue="0.41317195600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <font key="NSFont" size="24" name="Arial-Black"/>
+                                                                <font key="NSOriginalFont" size="24" name="Arial-Black"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="{temp}°">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.41317195600000001" green="0.41317195600000001" blue="0.41317195600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <font key="NSFont" size="24" name="Arial-Black"/>
+                                                                <font key="NSOriginalFont" size="24" name="Arial-Black"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="dLd-pk-ZuD" secondAttribute="bottom" constant="10" id="3f4-xf-nZt"/>
+                                            <constraint firstItem="gWu-ur-scP" firstAttribute="leading" secondItem="uXn-Bi-4OA" secondAttribute="leading" id="GBc-fz-cZd"/>
+                                            <constraint firstItem="dLd-pk-ZuD" firstAttribute="top" secondItem="gWu-ur-scP" secondAttribute="bottom" id="SHK-s5-I0Q"/>
+                                            <constraint firstAttribute="trailing" secondItem="dLd-pk-ZuD" secondAttribute="trailing" id="fGQ-ED-uaI"/>
+                                            <constraint firstItem="gWu-ur-scP" firstAttribute="top" secondItem="uXn-Bi-4OA" secondAttribute="top" id="mYY-4b-n3G"/>
+                                            <constraint firstItem="dLd-pk-ZuD" firstAttribute="leading" secondItem="uXn-Bi-4OA" secondAttribute="leading" id="tJy-B4-5wl"/>
+                                            <constraint firstAttribute="trailing" secondItem="gWu-ur-scP" secondAttribute="trailing" id="xjN-L1-BT8"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="weatherIcon" destination="gWu-ur-scP" id="oHQ-Hr-fXE"/>
+                                            <outlet property="weatherText" destination="dLd-pk-ZuD" id="UIS-AP-9S2"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="ViT-r4-ONB" id="K8Q-0R-fwF"/>
+                                    <outlet property="delegate" destination="ViT-r4-ONB" id="EDj-25-xjf"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAg-yZ-9J1">
+                                <rect key="frame" x="187" y="802" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="RlZ-A2-vJd"/>
-                                    <constraint firstAttribute="width" constant="40" id="rYj-FU-5t2"/>
+                                    <constraint firstAttribute="height" constant="40" id="EhK-KJ-od6"/>
+                                    <constraint firstAttribute="width" constant="40" id="jYX-0E-ViX"/>
                                 </constraints>
                                 <state key="normal" image="refresh"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="grey"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="translate(30,-30)"/>
-                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="m2w-Ed-2TA" firstAttribute="centerX" secondItem="Fbu-X4-8xh" secondAttribute="centerX" identifier="centerX" id="DIS-bC-vKP"/>
-                            <constraint firstAttribute="trailing" secondItem="BGw-Cs-oI7" secondAttribute="trailing" id="FG5-6e-mGh"/>
-                            <constraint firstItem="POX-wt-KOJ" firstAttribute="leading" secondItem="Fbu-X4-8xh" secondAttribute="leadingMargin" id="Hgz-vR-wtu"/>
-                            <constraint firstItem="7kc-Vd-RxF" firstAttribute="width" secondItem="Fbu-X4-8xh" secondAttribute="width" id="IXj-ns-LGJ"/>
-                            <constraint firstAttribute="trailing" secondItem="0mZ-k8-fud" secondAttribute="trailing" constant="8" id="IqH-kN-ACw"/>
-                            <constraint firstItem="0mZ-k8-fud" firstAttribute="top" secondItem="7Ve-pF-1zb" secondAttribute="bottom" constant="16" id="RIr-yf-SzE"/>
-                            <constraint firstItem="POX-wt-KOJ" firstAttribute="trailing" secondItem="Fbu-X4-8xh" secondAttribute="trailingMargin" id="XT2-qp-vGD"/>
-                            <constraint firstAttribute="trailing" secondItem="3q3-Fg-stV" secondAttribute="trailing" id="Xu1-2a-lGd"/>
-                            <constraint firstItem="3q3-Fg-stV" firstAttribute="top" secondItem="POX-wt-KOJ" secondAttribute="bottom" constant="16" id="f6j-8d-npP"/>
-                            <constraint firstItem="m2w-Ed-2TA" firstAttribute="top" secondItem="7Ve-pF-1zb" secondAttribute="bottom" constant="16" identifier="top16" id="gnV-8f-nsw"/>
-                            <constraint firstItem="3q3-Fg-stV" firstAttribute="leading" secondItem="Fbu-X4-8xh" secondAttribute="leading" id="jAw-8g-mNZ"/>
-                            <constraint firstItem="BGw-Cs-oI7" firstAttribute="leading" secondItem="Fbu-X4-8xh" secondAttribute="leading" id="jiQ-9h-0an"/>
-                            <constraint firstItem="A9W-dM-Cxr" firstAttribute="top" secondItem="BGw-Cs-oI7" secondAttribute="bottom" constant="20" id="nkG-p5-AT6"/>
-                            <constraint firstItem="POX-wt-KOJ" firstAttribute="top" secondItem="m2w-Ed-2TA" secondAttribute="bottom" constant="16" identifier="bottom16" id="sji-Vh-Qki"/>
-                            <constraint firstItem="BGw-Cs-oI7" firstAttribute="top" secondItem="3q3-Fg-stV" secondAttribute="bottom" constant="8" id="vvc-H8-4VV"/>
+                            <constraint firstItem="A9W-dM-Cxr" firstAttribute="top" secondItem="dAg-yZ-9J1" secondAttribute="bottom" constant="20" id="23H-xh-yVE"/>
+                            <constraint firstItem="POX-wt-KOJ" firstAttribute="leading" secondItem="L5W-mB-xmu" secondAttribute="leading" constant="20" id="2qf-d6-fNb"/>
+                            <constraint firstItem="67S-Ap-uuh" firstAttribute="leading" secondItem="L5W-mB-xmu" secondAttribute="leading" constant="20" id="3u9-uI-pzh"/>
+                            <constraint firstItem="POX-wt-KOJ" firstAttribute="top" secondItem="m2w-Ed-2TA" secondAttribute="bottom" constant="16" id="4MI-sg-EnU"/>
+                            <constraint firstItem="dAg-yZ-9J1" firstAttribute="top" secondItem="67S-Ap-uuh" secondAttribute="bottom" constant="20" id="Bur-Dw-FBr"/>
+                            <constraint firstItem="67S-Ap-uuh" firstAttribute="trailing" secondItem="L5W-mB-xmu" secondAttribute="trailing" constant="-20" id="Ea3-ar-Qwf"/>
+                            <constraint firstItem="m2w-Ed-2TA" firstAttribute="centerX" secondItem="Fbu-X4-8xh" secondAttribute="centerX" id="MBx-EL-yHa"/>
+                            <constraint firstItem="m2w-Ed-2TA" firstAttribute="top" secondItem="7Ve-pF-1zb" secondAttribute="bottom" constant="16" id="UNK-h3-5xl"/>
+                            <constraint firstItem="L5W-mB-xmu" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GJo-i1-JUv" secondAttribute="trailing" constant="10" id="XaZ-6L-e3s"/>
+                            <constraint firstItem="67S-Ap-uuh" firstAttribute="top" secondItem="GJo-i1-JUv" secondAttribute="bottom" constant="30" id="oIL-pU-a5O"/>
+                            <constraint firstItem="L5W-mB-xmu" firstAttribute="trailing" secondItem="POX-wt-KOJ" secondAttribute="trailing" constant="20" id="pSX-7V-yg7"/>
+                            <constraint firstItem="GJo-i1-JUv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="L5W-mB-xmu" secondAttribute="leading" constant="10" id="phg-X7-y74"/>
+                            <constraint firstItem="GJo-i1-JUv" firstAttribute="top" secondItem="POX-wt-KOJ" secondAttribute="bottom" constant="30" id="t4q-Ap-rcJ"/>
+                            <constraint firstItem="dAg-yZ-9J1" firstAttribute="centerX" secondItem="Fbu-X4-8xh" secondAttribute="centerX" id="tja-SL-1UX"/>
+                            <constraint firstItem="GJo-i1-JUv" firstAttribute="centerX" secondItem="Fbu-X4-8xh" secondAttribute="centerX" id="up9-D9-3Ci"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="L5W-mB-xmu"/>
                     </view>
@@ -458,562 +337,17 @@
                     <connections>
                         <outlet property="cloudsValueLabel" destination="c0e-vx-0s6" id="vJO-hc-4VE"/>
                         <outlet property="collectionView" destination="67S-Ap-uuh" id="v67-Da-NiD"/>
-                        <outlet property="globalInfosView" destination="3q3-Fg-stV" id="ugM-7b-Esh"/>
                         <outlet property="globalWeatherImage" destination="m2w-Ed-2TA" id="LBw-CM-K6m"/>
                         <outlet property="humidityValueLabel" destination="shf-SL-jCX" id="Kry-dL-j6P"/>
                         <outlet property="pressureValueLabel" destination="IXs-es-ih6" id="QYv-g9-DF0"/>
-                        <outlet property="refreshButton" destination="0mZ-k8-fud" id="eGA-Kj-TWl"/>
+                        <outlet property="refreshButton" destination="dAg-yZ-9J1" id="tCS-Ya-VCk"/>
                         <outlet property="tempValueLabel" destination="POX-wt-KOJ" id="SQG-pQ-UXT"/>
                         <outlet property="windValueLabel" destination="Iao-ij-30l" id="jRk-yA-EGP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHd-mI-5pe" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1143" y="98"/>
-        </scene>
-        <!--Detail View Controller-->
-        <scene sceneID="UcO-3h-E1G">
-            <objects>
-                <tableViewController storyboardIdentifier="DetailViewController" id="1gV-DZ-IEk" customClass="DetailViewController" customModule="CodingTest_Meteo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" id="fCL-DE-HXu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="omC-95-MAv">
-                            <rect key="frame" x="0.0" y="600" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" name="MavenPro-Regular" family="Maven Pro" pointSize="25"/>
-                            <state key="normal" title="Temps courant">
-                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
-                            </state>
-                            <connections>
-                                <segue destination="2oW-7O-ybG" kind="unwind" unwindAction="unwind:" id="O2R-5a-Wla"/>
-                            </connections>
-                        </button>
-                        <sections>
-                            <tableViewSection id="n3k-T9-4AL">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ForecastTableViewCell" id="6vc-jP-egc" customClass="ForecastTableViewCell" customModule="CodingTest_Meteo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6vc-jP-egc" id="e9D-LR-f3b">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="119.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LRd-c6-cVw">
-                                                    <rect key="frame" x="108" y="11" width="286" height="98"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3L9-Qe-Qvb">
-                                                        <size key="itemSize" width="60" height="102"/>
-                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                    </collectionViewFlowLayout>
-                                                    <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ForecastCollectionViewCell" id="vt6-O3-kKU" customClass="ForecastCollectionViewCell" customModule="CodingTest_Meteo" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="-2" width="60" height="102"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="102"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
-                                                                <subviews>
-                                                                    <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XHd-S3-JbO">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="40"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="40" id="Ot9-BW-ptJ"/>
-                                                                        </constraints>
-                                                                    </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.44999998807907104" translatesAutoresizingMaskIntoConstraints="NO" id="sc6-Wa-doI">
-                                                                        <rect key="frame" x="0.0" y="40" width="60" height="62"/>
-                                                                        <attributedString key="attributedText">
-                                                                            <fragment>
-                                                                                <string key="content">{hour}h - {temp}°
-{wind} m/s
-{pressure} hpa</string>
-                                                                                <attributes>
-                                                                                    <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" metaFont="smallSystem"/>
-                                                                                    <font key="NSOriginalFont" metaFont="smallSystem"/>
-                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                                </attributes>
-                                                                            </fragment>
-                                                                        </attributedString>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                            </view>
-                                                            <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="sc6-Wa-doI" secondAttribute="trailing" id="6LV-LF-c7e"/>
-                                                                <constraint firstItem="sc6-Wa-doI" firstAttribute="top" secondItem="XHd-S3-JbO" secondAttribute="bottom" id="GMV-Dq-STU"/>
-                                                                <constraint firstAttribute="bottom" secondItem="sc6-Wa-doI" secondAttribute="bottom" id="Iwt-jJ-7ll"/>
-                                                                <constraint firstItem="sc6-Wa-doI" firstAttribute="leading" secondItem="vt6-O3-kKU" secondAttribute="leading" id="QU8-zv-a29"/>
-                                                                <constraint firstAttribute="trailing" secondItem="XHd-S3-JbO" secondAttribute="trailing" id="cGk-QT-2WQ"/>
-                                                                <constraint firstItem="XHd-S3-JbO" firstAttribute="leading" secondItem="vt6-O3-kKU" secondAttribute="leading" id="kuP-4e-t54"/>
-                                                                <constraint firstItem="XHd-S3-JbO" firstAttribute="top" secondItem="vt6-O3-kKU" secondAttribute="top" id="qYx-fy-f90"/>
-                                                            </constraints>
-                                                            <connections>
-                                                                <outlet property="weatherIcon" destination="XHd-S3-JbO" id="tWq-dk-M1m"/>
-                                                                <outlet property="weatherText" destination="sc6-Wa-doI" id="FK6-If-XU0"/>
-                                                            </connections>
-                                                        </collectionViewCell>
-                                                    </cells>
-                                                    <connections>
-                                                        <outlet property="dataSource" destination="6vc-jP-egc" id="RIK-Fu-Zlj"/>
-                                                        <outlet property="delegate" destination="6vc-jP-egc" id="9Tq-CN-B7g"/>
-                                                    </connections>
-                                                </collectionView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jR0-78-ilL">
-                                                    <rect key="frame" x="20" y="22" width="80" height="75"/>
-                                                    <color key="backgroundColor" red="0.86924968270000003" green="0.86924968270000003" blue="0.86924968270000003" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="X2g-2g-QMZ"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="MavenPro-Bold" family="Maven Pro" pointSize="12"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="40"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="jR0-78-ilL" firstAttribute="bottom" secondItem="e9D-LR-f3b" secondAttribute="bottomMargin" constant="-12" id="26H-w9-aFx"/>
-                                                <constraint firstItem="LRd-c6-cVw" firstAttribute="bottom" secondItem="e9D-LR-f3b" secondAttribute="bottomMargin" id="E4a-0G-Kgi"/>
-                                                <constraint firstItem="jR0-78-ilL" firstAttribute="top" secondItem="e9D-LR-f3b" secondAttribute="topMargin" constant="11" id="FYd-xZ-zgA"/>
-                                                <constraint firstItem="jR0-78-ilL" firstAttribute="leading" secondItem="e9D-LR-f3b" secondAttribute="leadingMargin" id="L9z-Ab-vJq"/>
-                                                <constraint firstItem="LRd-c6-cVw" firstAttribute="top" secondItem="e9D-LR-f3b" secondAttribute="topMargin" id="YZI-tq-LJ6"/>
-                                                <constraint firstItem="LRd-c6-cVw" firstAttribute="trailing" secondItem="e9D-LR-f3b" secondAttribute="trailingMargin" id="kPj-On-iPM"/>
-                                                <constraint firstItem="LRd-c6-cVw" firstAttribute="leading" secondItem="jR0-78-ilL" secondAttribute="trailing" constant="8" id="zmD-9o-OUu"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="collectionView" destination="LRd-c6-cVw" id="wFD-aB-Ato"/>
-                                            <outlet property="dateLabel" destination="jR0-78-ilL" id="R2b-iT-olh"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ForecastTableViewCell" id="g1j-Rx-JuN" customClass="ForecastTableViewCell" customModule="CodingTest_Meteo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="120" width="414" height="120"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g1j-Rx-JuN" id="1i3-Gr-fHU">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="119.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="51V-mp-fVB">
-                                                    <rect key="frame" x="108" y="11" width="286" height="98"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DtM-mR-nqA">
-                                                        <size key="itemSize" width="60" height="102"/>
-                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                    </collectionViewFlowLayout>
-                                                    <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ForecastCollectionViewCell" id="xRr-P9-ZQS" customClass="ForecastCollectionViewCell" customModule="CodingTest_Meteo" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="-2" width="60" height="102"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="102"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
-                                                                <subviews>
-                                                                    <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="un4-SF-4wS">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="40"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="40" id="P8J-P0-lOn"/>
-                                                                        </constraints>
-                                                                    </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.44999998807907104" translatesAutoresizingMaskIntoConstraints="NO" id="NEr-TG-Hnr">
-                                                                        <rect key="frame" x="0.0" y="40" width="60" height="62"/>
-                                                                        <attributedString key="attributedText">
-                                                                            <fragment>
-                                                                                <string key="content">{hour}h - {temp}°
-{wind} m/s
-{pressure} hpa</string>
-                                                                                <attributes>
-                                                                                    <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" metaFont="smallSystem"/>
-                                                                                    <font key="NSOriginalFont" metaFont="smallSystem"/>
-                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                                </attributes>
-                                                                            </fragment>
-                                                                        </attributedString>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                            </view>
-                                                            <constraints>
-                                                                <constraint firstItem="NEr-TG-Hnr" firstAttribute="top" secondItem="un4-SF-4wS" secondAttribute="bottom" id="2Yj-wf-vax"/>
-                                                                <constraint firstItem="un4-SF-4wS" firstAttribute="top" secondItem="xRr-P9-ZQS" secondAttribute="top" id="FEP-j5-o7r"/>
-                                                                <constraint firstAttribute="trailing" secondItem="NEr-TG-Hnr" secondAttribute="trailing" id="Gwf-Oa-knE"/>
-                                                                <constraint firstItem="un4-SF-4wS" firstAttribute="leading" secondItem="xRr-P9-ZQS" secondAttribute="leading" id="dLe-f2-HrM"/>
-                                                                <constraint firstAttribute="bottom" secondItem="NEr-TG-Hnr" secondAttribute="bottom" id="ekP-Ug-YwZ"/>
-                                                                <constraint firstItem="NEr-TG-Hnr" firstAttribute="leading" secondItem="xRr-P9-ZQS" secondAttribute="leading" id="jCL-Lg-a60"/>
-                                                                <constraint firstAttribute="trailing" secondItem="un4-SF-4wS" secondAttribute="trailing" id="lOh-yZ-49I"/>
-                                                            </constraints>
-                                                            <connections>
-                                                                <outlet property="weatherIcon" destination="un4-SF-4wS" id="ogj-FA-gws"/>
-                                                                <outlet property="weatherText" destination="NEr-TG-Hnr" id="Y2e-Wz-d8L"/>
-                                                            </connections>
-                                                        </collectionViewCell>
-                                                    </cells>
-                                                    <connections>
-                                                        <outlet property="dataSource" destination="g1j-Rx-JuN" id="3dR-cH-RXy"/>
-                                                        <outlet property="delegate" destination="g1j-Rx-JuN" id="9VY-PP-Pw7"/>
-                                                    </connections>
-                                                </collectionView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="p5v-zn-i9d">
-                                                    <rect key="frame" x="20" y="22" width="80" height="75"/>
-                                                    <color key="backgroundColor" red="0.86924968270000003" green="0.86924968270000003" blue="0.86924968270000003" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="ke4-OV-JTG"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="MavenPro-Bold" family="Maven Pro" pointSize="12"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="40"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="p5v-zn-i9d" firstAttribute="leading" secondItem="1i3-Gr-fHU" secondAttribute="leadingMargin" id="4d8-2U-JIu"/>
-                                                <constraint firstItem="51V-mp-fVB" firstAttribute="trailing" secondItem="1i3-Gr-fHU" secondAttribute="trailingMargin" id="65X-d8-OcQ"/>
-                                                <constraint firstItem="p5v-zn-i9d" firstAttribute="top" secondItem="1i3-Gr-fHU" secondAttribute="topMargin" constant="11" id="ExH-kh-DZ3"/>
-                                                <constraint firstItem="51V-mp-fVB" firstAttribute="top" secondItem="1i3-Gr-fHU" secondAttribute="topMargin" id="Hh4-Cj-X8g"/>
-                                                <constraint firstItem="51V-mp-fVB" firstAttribute="bottom" secondItem="1i3-Gr-fHU" secondAttribute="bottomMargin" id="J3T-OM-huI"/>
-                                                <constraint firstItem="p5v-zn-i9d" firstAttribute="bottom" secondItem="1i3-Gr-fHU" secondAttribute="bottomMargin" constant="-12" id="fMC-OH-dbH"/>
-                                                <constraint firstItem="51V-mp-fVB" firstAttribute="leading" secondItem="p5v-zn-i9d" secondAttribute="trailing" constant="8" id="jKN-ge-QuK"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="collectionView" destination="51V-mp-fVB" id="E6Q-bm-gOT"/>
-                                            <outlet property="dateLabel" destination="p5v-zn-i9d" id="Ag8-cg-btf"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ForecastTableViewCell" id="wUn-Te-wkU" customClass="ForecastTableViewCell" customModule="CodingTest_Meteo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="240" width="414" height="120"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wUn-Te-wkU" id="wZo-cb-fox">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="119.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Q4T-wu-y2O">
-                                                    <rect key="frame" x="108" y="11" width="286" height="98"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="paY-ma-IWK">
-                                                        <size key="itemSize" width="60" height="102"/>
-                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                    </collectionViewFlowLayout>
-                                                    <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ForecastCollectionViewCell" id="j3O-sG-TbD" customClass="ForecastCollectionViewCell" customModule="CodingTest_Meteo" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="-2" width="60" height="102"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="102"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
-                                                                <subviews>
-                                                                    <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1E2-iq-zUB">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="40"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="40" id="pgn-uS-CaT"/>
-                                                                        </constraints>
-                                                                    </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.44999998807907104" translatesAutoresizingMaskIntoConstraints="NO" id="NhX-pV-HMD">
-                                                                        <rect key="frame" x="0.0" y="40" width="60" height="62"/>
-                                                                        <attributedString key="attributedText">
-                                                                            <fragment>
-                                                                                <string key="content">{hour}h - {temp}°
-{wind} m/s
-{pressure} hpa</string>
-                                                                                <attributes>
-                                                                                    <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" metaFont="smallSystem"/>
-                                                                                    <font key="NSOriginalFont" metaFont="smallSystem"/>
-                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                                </attributes>
-                                                                            </fragment>
-                                                                        </attributedString>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                            </view>
-                                                            <constraints>
-                                                                <constraint firstItem="NhX-pV-HMD" firstAttribute="leading" secondItem="j3O-sG-TbD" secondAttribute="leading" id="8Ra-gY-CoI"/>
-                                                                <constraint firstItem="1E2-iq-zUB" firstAttribute="leading" secondItem="j3O-sG-TbD" secondAttribute="leading" id="9BL-oF-xgV"/>
-                                                                <constraint firstAttribute="trailing" secondItem="1E2-iq-zUB" secondAttribute="trailing" id="IHp-AM-hcS"/>
-                                                                <constraint firstItem="1E2-iq-zUB" firstAttribute="top" secondItem="j3O-sG-TbD" secondAttribute="top" id="Iqn-i7-vfm"/>
-                                                                <constraint firstAttribute="trailing" secondItem="NhX-pV-HMD" secondAttribute="trailing" id="Qhw-Pb-m6g"/>
-                                                                <constraint firstItem="NhX-pV-HMD" firstAttribute="top" secondItem="1E2-iq-zUB" secondAttribute="bottom" id="Y7k-cm-E9J"/>
-                                                                <constraint firstAttribute="bottom" secondItem="NhX-pV-HMD" secondAttribute="bottom" id="uod-hF-Fcl"/>
-                                                            </constraints>
-                                                            <connections>
-                                                                <outlet property="weatherIcon" destination="1E2-iq-zUB" id="MFY-WE-AJV"/>
-                                                                <outlet property="weatherText" destination="NhX-pV-HMD" id="cLz-c5-2X5"/>
-                                                            </connections>
-                                                        </collectionViewCell>
-                                                    </cells>
-                                                    <connections>
-                                                        <outlet property="dataSource" destination="wUn-Te-wkU" id="pMc-4T-amD"/>
-                                                        <outlet property="delegate" destination="wUn-Te-wkU" id="Wlj-4S-q40"/>
-                                                    </connections>
-                                                </collectionView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="b7S-bT-zwk">
-                                                    <rect key="frame" x="20" y="22" width="80" height="75"/>
-                                                    <color key="backgroundColor" red="0.86924968270000003" green="0.86924968270000003" blue="0.86924968270000003" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="SXK-hV-VV0"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="MavenPro-Bold" family="Maven Pro" pointSize="12"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="40"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Q4T-wu-y2O" firstAttribute="trailing" secondItem="wZo-cb-fox" secondAttribute="trailingMargin" id="2G1-Of-TXk"/>
-                                                <constraint firstItem="b7S-bT-zwk" firstAttribute="leading" secondItem="wZo-cb-fox" secondAttribute="leadingMargin" id="TAK-jX-zH1"/>
-                                                <constraint firstItem="Q4T-wu-y2O" firstAttribute="top" secondItem="wZo-cb-fox" secondAttribute="topMargin" id="bgX-bK-gDU"/>
-                                                <constraint firstItem="b7S-bT-zwk" firstAttribute="bottom" secondItem="wZo-cb-fox" secondAttribute="bottomMargin" constant="-12" id="eYT-qY-7zp"/>
-                                                <constraint firstItem="Q4T-wu-y2O" firstAttribute="bottom" secondItem="wZo-cb-fox" secondAttribute="bottomMargin" id="kvO-cr-mau"/>
-                                                <constraint firstItem="b7S-bT-zwk" firstAttribute="top" secondItem="wZo-cb-fox" secondAttribute="topMargin" constant="11" id="tWb-Yf-zvh"/>
-                                                <constraint firstItem="Q4T-wu-y2O" firstAttribute="leading" secondItem="b7S-bT-zwk" secondAttribute="trailing" constant="8" id="uPZ-c6-Bib"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="collectionView" destination="Q4T-wu-y2O" id="brn-Mx-qQV"/>
-                                            <outlet property="dateLabel" destination="b7S-bT-zwk" id="F9q-oc-kVC"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ForecastTableViewCell" id="4ry-t5-Uts" customClass="ForecastTableViewCell" customModule="CodingTest_Meteo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="360" width="414" height="120"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4ry-t5-Uts" id="1wS-bx-OrT">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="119.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MzO-IT-MRI">
-                                                    <rect key="frame" x="108" y="11" width="286" height="98"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bbg-Wl-L5g">
-                                                        <size key="itemSize" width="60" height="102"/>
-                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                    </collectionViewFlowLayout>
-                                                    <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ForecastCollectionViewCell" id="qOJ-NP-NK1" customClass="ForecastCollectionViewCell" customModule="CodingTest_Meteo" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="-2" width="60" height="102"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="102"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
-                                                                <subviews>
-                                                                    <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vKy-jM-xdL">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="40"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="40" id="ugF-yF-Qe1"/>
-                                                                        </constraints>
-                                                                    </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.44999998807907104" translatesAutoresizingMaskIntoConstraints="NO" id="jhi-39-HlB">
-                                                                        <rect key="frame" x="0.0" y="40" width="60" height="62"/>
-                                                                        <attributedString key="attributedText">
-                                                                            <fragment>
-                                                                                <string key="content">{hour}h - {temp}°
-{wind} m/s
-{pressure} hpa</string>
-                                                                                <attributes>
-                                                                                    <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" metaFont="smallSystem"/>
-                                                                                    <font key="NSOriginalFont" metaFont="smallSystem"/>
-                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                                </attributes>
-                                                                            </fragment>
-                                                                        </attributedString>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                            </view>
-                                                            <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="jhi-39-HlB" secondAttribute="trailing" id="K0B-Iw-Gw1"/>
-                                                                <constraint firstItem="vKy-jM-xdL" firstAttribute="top" secondItem="qOJ-NP-NK1" secondAttribute="top" id="Sbu-Yy-yjG"/>
-                                                                <constraint firstAttribute="trailing" secondItem="vKy-jM-xdL" secondAttribute="trailing" id="dSI-n1-wtO"/>
-                                                                <constraint firstItem="vKy-jM-xdL" firstAttribute="leading" secondItem="qOJ-NP-NK1" secondAttribute="leading" id="eHT-bb-UcF"/>
-                                                                <constraint firstAttribute="bottom" secondItem="jhi-39-HlB" secondAttribute="bottom" id="iE0-f6-WWy"/>
-                                                                <constraint firstItem="jhi-39-HlB" firstAttribute="leading" secondItem="qOJ-NP-NK1" secondAttribute="leading" id="pwL-e2-Z3c"/>
-                                                                <constraint firstItem="jhi-39-HlB" firstAttribute="top" secondItem="vKy-jM-xdL" secondAttribute="bottom" id="rGk-UG-VD4"/>
-                                                            </constraints>
-                                                            <connections>
-                                                                <outlet property="weatherIcon" destination="vKy-jM-xdL" id="U7I-6c-I6R"/>
-                                                                <outlet property="weatherText" destination="jhi-39-HlB" id="VSA-Ob-6lO"/>
-                                                            </connections>
-                                                        </collectionViewCell>
-                                                    </cells>
-                                                    <connections>
-                                                        <outlet property="dataSource" destination="4ry-t5-Uts" id="ceF-xh-2ai"/>
-                                                        <outlet property="delegate" destination="4ry-t5-Uts" id="4IA-m2-HBS"/>
-                                                    </connections>
-                                                </collectionView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="u2F-Ol-WG6">
-                                                    <rect key="frame" x="20" y="22" width="80" height="75"/>
-                                                    <color key="backgroundColor" red="0.86924968270000003" green="0.86924968270000003" blue="0.86924968270000003" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="jHs-8E-p1f"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="MavenPro-Bold" family="Maven Pro" pointSize="12"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="40"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="MzO-IT-MRI" firstAttribute="bottom" secondItem="1wS-bx-OrT" secondAttribute="bottomMargin" id="OU3-U6-qjk"/>
-                                                <constraint firstItem="MzO-IT-MRI" firstAttribute="leading" secondItem="u2F-Ol-WG6" secondAttribute="trailing" constant="8" id="a2Y-zk-RUC"/>
-                                                <constraint firstItem="u2F-Ol-WG6" firstAttribute="bottom" secondItem="1wS-bx-OrT" secondAttribute="bottomMargin" constant="-12" id="dEM-Fg-D6l"/>
-                                                <constraint firstItem="MzO-IT-MRI" firstAttribute="trailing" secondItem="1wS-bx-OrT" secondAttribute="trailingMargin" id="mID-eL-BHH"/>
-                                                <constraint firstItem="u2F-Ol-WG6" firstAttribute="leading" secondItem="1wS-bx-OrT" secondAttribute="leadingMargin" id="oLh-27-1BL"/>
-                                                <constraint firstItem="u2F-Ol-WG6" firstAttribute="top" secondItem="1wS-bx-OrT" secondAttribute="topMargin" constant="11" id="wm6-Bc-IjF"/>
-                                                <constraint firstItem="MzO-IT-MRI" firstAttribute="top" secondItem="1wS-bx-OrT" secondAttribute="topMargin" id="zuq-9z-ZE8"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="collectionView" destination="MzO-IT-MRI" id="JOO-xH-f5r"/>
-                                            <outlet property="dateLabel" destination="u2F-Ol-WG6" id="Eex-oI-Kan"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ForecastCollectionViewCell" id="V8i-MC-Zrb" customClass="ForecastTableViewCell" customModule="CodingTest_Meteo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="480" width="414" height="120"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V8i-MC-Zrb" id="eab-g5-HDy">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="119.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jF7-MB-vfg">
-                                                    <rect key="frame" x="108" y="11" width="286" height="98"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9py-OY-UND">
-                                                        <size key="itemSize" width="60" height="102"/>
-                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                    </collectionViewFlowLayout>
-                                                    <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ForecastCollectionViewCell" id="1Gd-6S-wBK" customClass="ForecastCollectionViewCell" customModule="CodingTest_Meteo" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="-2" width="60" height="102"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="102"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
-                                                                <subviews>
-                                                                    <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HkT-1T-Cao">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="40"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="40" id="8PP-hV-Gaf"/>
-                                                                        </constraints>
-                                                                    </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.44999998807907104" translatesAutoresizingMaskIntoConstraints="NO" id="OjR-qu-FLX">
-                                                                        <rect key="frame" x="0.0" y="40" width="60" height="62"/>
-                                                                        <attributedString key="attributedText">
-                                                                            <fragment>
-                                                                                <string key="content">{hour}h - {temp}°
-{wind} m/s
-{pressure} hpa</string>
-                                                                                <attributes>
-                                                                                    <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    <font key="NSFont" metaFont="smallSystem"/>
-                                                                                    <font key="NSOriginalFont" metaFont="smallSystem"/>
-                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                                </attributes>
-                                                                            </fragment>
-                                                                        </attributedString>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                            </view>
-                                                            <constraints>
-                                                                <constraint firstItem="OjR-qu-FLX" firstAttribute="leading" secondItem="1Gd-6S-wBK" secondAttribute="leading" id="2wk-JB-4E2"/>
-                                                                <constraint firstAttribute="trailing" secondItem="HkT-1T-Cao" secondAttribute="trailing" id="3NR-ac-aoi"/>
-                                                                <constraint firstAttribute="trailing" secondItem="OjR-qu-FLX" secondAttribute="trailing" id="9oa-sf-NKk"/>
-                                                                <constraint firstItem="OjR-qu-FLX" firstAttribute="top" secondItem="HkT-1T-Cao" secondAttribute="bottom" id="DSy-sX-0it"/>
-                                                                <constraint firstItem="HkT-1T-Cao" firstAttribute="leading" secondItem="1Gd-6S-wBK" secondAttribute="leading" id="Zsu-Mf-Ci3"/>
-                                                                <constraint firstItem="HkT-1T-Cao" firstAttribute="top" secondItem="1Gd-6S-wBK" secondAttribute="top" id="cwF-Pc-2bn"/>
-                                                                <constraint firstAttribute="bottom" secondItem="OjR-qu-FLX" secondAttribute="bottom" id="tgU-iB-Lnx"/>
-                                                            </constraints>
-                                                            <connections>
-                                                                <outlet property="weatherIcon" destination="HkT-1T-Cao" id="3JA-PN-AdY"/>
-                                                                <outlet property="weatherText" destination="OjR-qu-FLX" id="Lyc-Dx-OjF"/>
-                                                            </connections>
-                                                        </collectionViewCell>
-                                                    </cells>
-                                                    <connections>
-                                                        <outlet property="dataSource" destination="V8i-MC-Zrb" id="r6d-vk-Lhq"/>
-                                                        <outlet property="delegate" destination="V8i-MC-Zrb" id="gSZ-tj-2sC"/>
-                                                    </connections>
-                                                </collectionView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vVR-Va-UhB">
-                                                    <rect key="frame" x="20" y="22" width="80" height="75"/>
-                                                    <color key="backgroundColor" red="0.86924968270000003" green="0.86924968270000003" blue="0.86924968270000003" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="nC8-xB-pIz"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="MavenPro-Bold" family="Maven Pro" pointSize="12"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="40"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="jF7-MB-vfg" firstAttribute="top" secondItem="eab-g5-HDy" secondAttribute="topMargin" id="4jC-of-umX"/>
-                                                <constraint firstItem="vVR-Va-UhB" firstAttribute="top" secondItem="eab-g5-HDy" secondAttribute="topMargin" constant="11" id="4kX-A5-0fc"/>
-                                                <constraint firstItem="vVR-Va-UhB" firstAttribute="leading" secondItem="eab-g5-HDy" secondAttribute="leadingMargin" id="G07-qb-1KR"/>
-                                                <constraint firstItem="jF7-MB-vfg" firstAttribute="bottom" secondItem="eab-g5-HDy" secondAttribute="bottomMargin" id="Kdr-yb-hFj"/>
-                                                <constraint firstItem="vVR-Va-UhB" firstAttribute="bottom" secondItem="eab-g5-HDy" secondAttribute="bottomMargin" constant="-12" id="Kxe-8y-wau"/>
-                                                <constraint firstItem="jF7-MB-vfg" firstAttribute="leading" secondItem="vVR-Va-UhB" secondAttribute="trailing" constant="8" id="obw-Lx-O0S"/>
-                                                <constraint firstItem="jF7-MB-vfg" firstAttribute="trailing" secondItem="eab-g5-HDy" secondAttribute="trailingMargin" id="zWp-he-ABy"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="collectionView" destination="jF7-MB-vfg" id="MFZ-eM-fWK"/>
-                                            <outlet property="dateLabel" destination="vVR-Va-UhB" id="KcC-9j-xlE"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="1gV-DZ-IEk" id="2GD-6f-Qxx"/>
-                            <outlet property="delegate" destination="1gV-DZ-IEk" id="6xb-9Y-Dgr"/>
-                        </connections>
-                    </tableView>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                    </userDefinedRuntimeAttributes>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2hh-lk-HGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="2oW-7O-ybG" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="2143" y="98"/>
+            <point key="canvasLocation" x="1142.0289855072465" y="97.767857142857139"/>
         </scene>
     </scenes>
     <resources>
