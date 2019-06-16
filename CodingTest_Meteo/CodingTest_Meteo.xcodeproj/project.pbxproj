@@ -111,11 +111,11 @@
 		5CBDA60C22B6880300CE7A9B /* CodingTest_Meteo */ = {
 			isa = PBXGroup;
 			children = (
+				5CBDA62D22B688A800CE7A9B /* UI & Controllers */,
+				5CBDA63122B688E800CE7A9B /* Models & Managers */,
+				5CBDA63022B688E000CE7A9B /* Resources */,
 				5CBDA60D22B6880300CE7A9B /* AppDelegate.swift */,
 				5CBDA61622B6880400CE7A9B /* LaunchScreen.storyboard */,
-				5CBDA63022B688E000CE7A9B /* Resources */,
-				5CBDA63122B688E800CE7A9B /* Models & Managers */,
-				5CBDA62D22B688A800CE7A9B /* UI & Controllers */,
 			);
 			path = CodingTest_Meteo;
 			sourceTree = "<group>";
