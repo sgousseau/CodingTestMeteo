@@ -30,6 +30,11 @@
 		5CBDA66022B69DC100CE7A9B /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBDA65F22B69DC100CE7A9B /* Models.swift */; };
 		5CBDA66222B6A02800CE7A9B /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBDA66122B6A02800CE7A9B /* ServiceError.swift */; };
 		5CBDA66422B6A5F200CE7A9B /* WheatherEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBDA66322B6A5F200CE7A9B /* WheatherEndpoints.swift */; };
+		5CBDA66622B6B3FA00CE7A9B /* WheatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBDA66522B6B3FA00CE7A9B /* WheatherViewModel.swift */; };
+		5CBDA66822B6B4CA00CE7A9B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBDA66722B6B4CA00CE7A9B /* Date+Extension.swift */; };
+		5CBDA66A22B6B90D00CE7A9B /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBDA66922B6B90D00CE7A9B /* DateFormatter+Extension.swift */; };
+		5CBDA66C22B6BDBB00CE7A9B /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBDA66B22B6BDBB00CE7A9B /* UIView+Extension.swift */; };
+		5CBDA66E22B6BDD400CE7A9B /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBDA66D22B6BDD400CE7A9B /* CALayer+Extension.swift */; };
 		962D9CA614F9A3E979A92A04 /* Pods_CodingTest_MeteoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 119E4BF6DA66CB5265B5538F /* Pods_CodingTest_MeteoTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +82,11 @@
 		5CBDA65F22B69DC100CE7A9B /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		5CBDA66122B6A02800CE7A9B /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		5CBDA66322B6A5F200CE7A9B /* WheatherEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherEndpoints.swift; sourceTree = "<group>"; };
+		5CBDA66522B6B3FA00CE7A9B /* WheatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherViewModel.swift; sourceTree = "<group>"; };
+		5CBDA66722B6B4CA00CE7A9B /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		5CBDA66922B6B90D00CE7A9B /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
+		5CBDA66B22B6BDBB00CE7A9B /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		5CBDA66D22B6BDD400CE7A9B /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		7D642A403156F1A5BA93552E /* Pods_CodingTest_Meteo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodingTest_Meteo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8DD6C4693B399BA092FB8BF /* Pods-CodingTest_MeteoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodingTest_MeteoTests.debug.xcconfig"; path = "Target Support Files/Pods-CodingTest_MeteoTests/Pods-CodingTest_MeteoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E847B8C7220427D36B8CFA40 /* Pods-CodingTest_Meteo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodingTest_Meteo.release.xcconfig"; path = "Target Support Files/Pods-CodingTest_Meteo/Pods-CodingTest_Meteo.release.xcconfig"; sourceTree = "<group>"; };
@@ -145,8 +155,8 @@
 		5CBDA60C22B6880300CE7A9B /* CodingTest_Meteo */ = {
 			isa = PBXGroup;
 			children = (
-				5CBDA65122B699E900CE7A9B /* Misc & Helpers */,
 				5CBDA62D22B688A800CE7A9B /* UI & Controllers */,
+				5CBDA65122B699E900CE7A9B /* Misc & Helpers */,
 				5CBDA63122B688E800CE7A9B /* Models & Managers */,
 				5CBDA63022B688E000CE7A9B /* Resources */,
 				5CBDA60D22B6880300CE7A9B /* AppDelegate.swift */,
@@ -168,10 +178,11 @@
 			isa = PBXGroup;
 			children = (
 				5CBDA61122B6880300CE7A9B /* Main.storyboard */,
+				5CBDA64522B6983C00CE7A9B /* cells */,
 				5CBDA60F22B6880300CE7A9B /* SplashScreenViewController.swift */,
 				5CBDA63B22B68ECB00CE7A9B /* FirstViewController.swift */,
 				5CBDA63D22B68ED800CE7A9B /* DetailViewController.swift */,
-				5CBDA64522B6983C00CE7A9B /* cells */,
+				5CBDA66522B6B3FA00CE7A9B /* WheatherViewModel.swift */,
 			);
 			path = "UI & Controllers";
 			sourceTree = "<group>";
@@ -266,6 +277,10 @@
 			isa = PBXGroup;
 			children = (
 				5CBDA65B22B69BEC00CE7A9B /* String+Extension.swift */,
+				5CBDA66722B6B4CA00CE7A9B /* Date+Extension.swift */,
+				5CBDA66922B6B90D00CE7A9B /* DateFormatter+Extension.swift */,
+				5CBDA66B22B6BDBB00CE7A9B /* UIView+Extension.swift */,
+				5CBDA66D22B6BDD400CE7A9B /* CALayer+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -477,21 +492,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CBDA66C22B6BDBB00CE7A9B /* UIView+Extension.swift in Sources */,
 				5CBDA64C22B698DA00CE7A9B /* NetworkService.swift in Sources */,
 				5CBDA61022B6880300CE7A9B /* SplashScreenViewController.swift in Sources */,
 				5CBDA60E22B6880300CE7A9B /* AppDelegate.swift in Sources */,
+				5CBDA66E22B6BDD400CE7A9B /* CALayer+Extension.swift in Sources */,
 				5CBDA64422B6907F00CE7A9B /* ForecastCollectionViewCell.swift in Sources */,
 				5CBDA65422B69A0500CE7A9B /* ActivityIndicator.swift in Sources */,
+				5CBDA66822B6B4CA00CE7A9B /* Date+Extension.swift in Sources */,
 				5CBDA63E22B68ED800CE7A9B /* DetailViewController.swift in Sources */,
 				5CBDA63522B68B9D00CE7A9B /* R.generated.swift in Sources */,
 				5CBDA64222B6906700CE7A9B /* ForecastTableViewCell.swift in Sources */,
 				5CBDA66222B6A02800CE7A9B /* ServiceError.swift in Sources */,
 				5CBDA64022B68FC000CE7A9B /* ForecastCellProtocol.swift in Sources */,
 				5CBDA66422B6A5F200CE7A9B /* WheatherEndpoints.swift in Sources */,
+				5CBDA66622B6B3FA00CE7A9B /* WheatherViewModel.swift in Sources */,
 				5CBDA64A22B6988000CE7A9B /* StorageService.swift in Sources */,
 				5CBDA65022B699D700CE7A9B /* ReachabilityService.swift in Sources */,
 				5CBDA66022B69DC100CE7A9B /* Models.swift in Sources */,
 				5CBDA65922B69B0C00CE7A9B /* WheatherManager.swift in Sources */,
+				5CBDA66A22B6B90D00CE7A9B /* DateFormatter+Extension.swift in Sources */,
 				5CBDA63C22B68ECB00CE7A9B /* FirstViewController.swift in Sources */,
 				5CBDA65C22B69BEC00CE7A9B /* String+Extension.swift in Sources */,
 				5CBDA65722B69A7B00CE7A9B /* Reachability.swift in Sources */,

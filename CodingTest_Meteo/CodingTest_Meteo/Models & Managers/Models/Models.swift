@@ -17,9 +17,9 @@ struct Forecasts: Codable {
 struct Forecast: Codable {
     let dt: Int
     let main: Main
-    let weather: [Weather]
-    let clouds: Clouds
-    let wind: Wind
+    let weather: [Weather] = []
+    let clouds: Clouds?
+    let wind: Wind?
     let rain: Rain?
     let dtTxt: String
     
