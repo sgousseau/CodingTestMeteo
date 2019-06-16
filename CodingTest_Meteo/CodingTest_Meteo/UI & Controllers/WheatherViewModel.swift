@@ -116,6 +116,7 @@ class WeatherViewModel {
             .map(Optional.init)
             .retryOnBecomesReachable(nil, reachabilityService: try! DefaultReachabilityService())
             .unwrap()
+            .do(onNext: { _ in self.manager.save() })
             .subscribe()
             .disposed(by: bag)
     }

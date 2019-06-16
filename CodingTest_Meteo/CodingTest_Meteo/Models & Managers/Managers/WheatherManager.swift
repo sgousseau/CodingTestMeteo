@@ -78,5 +78,6 @@ extension Reactive where Base: WeatherManager {
                 return Disposables.create()
             })
         })
+        .startWith(base.forecast ?? [])
     }
 }
