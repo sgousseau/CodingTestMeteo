@@ -567,7 +567,7 @@
                                                     <rect key="frame" x="20" y="22" width="80" height="75"/>
                                                     <color key="backgroundColor" red="0.86924968270000003" green="0.86924968270000003" blue="0.86924968270000003" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="80" id="X2g-2g-QMZ"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="X2g-2g-QMZ"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="MavenPro-Bold" family="Maven Pro" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
@@ -668,7 +668,7 @@
                                                     <rect key="frame" x="20" y="22" width="80" height="75"/>
                                                     <color key="backgroundColor" red="0.86924968270000003" green="0.86924968270000003" blue="0.86924968270000003" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="80" id="ke4-OV-JTG"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="ke4-OV-JTG"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="MavenPro-Bold" family="Maven Pro" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
@@ -769,7 +769,7 @@
                                                     <rect key="frame" x="20" y="22" width="80" height="75"/>
                                                     <color key="backgroundColor" red="0.86924968270000003" green="0.86924968270000003" blue="0.86924968270000003" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="80" id="SXK-hV-VV0"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="SXK-hV-VV0"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="MavenPro-Bold" family="Maven Pro" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
@@ -870,7 +870,7 @@
                                                     <rect key="frame" x="20" y="22" width="80" height="75"/>
                                                     <color key="backgroundColor" red="0.86924968270000003" green="0.86924968270000003" blue="0.86924968270000003" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="80" id="jHs-8E-p1f"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="jHs-8E-p1f"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="MavenPro-Bold" family="Maven Pro" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
@@ -971,7 +971,7 @@
                                                     <rect key="frame" x="20" y="22" width="80" height="75"/>
                                                     <color key="backgroundColor" red="0.86924968270000003" green="0.86924968270000003" blue="0.86924968270000003" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="80" id="nC8-xB-pIz"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="nC8-xB-pIz"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="MavenPro-Bold" family="Maven Pro" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.7208636558" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1008,7 +1008,6 @@
                     </tableView>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="heroModalAnimationTypeString" value="slide"/>
                     </userDefinedRuntimeAttributes>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hh-lk-HGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
