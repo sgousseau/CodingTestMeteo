@@ -4,7 +4,7 @@ Affichage de la météo de Paris avec OpenWeatherMap.
 
 ## Explications
 
-* MVVM standard avec un business layer sous forme de gestionnaire de données (WeatherManager) utilisant un utilitaire réseau (NetworkService) et/ou un utilitaire de stockage (StorageService).
+* MVVM standard avec un business layer sous forme de gestionnaire de données (WeatherManager) utilisant un utilitaire réseau (NetworkService) et un utilitaire de stockage (StorageService).
 * Dissociation de l’utilitaire réseau et des endpoints constituant l’API et intégration dans WeatherManager.
 * Exemple d’utilisation d’un pattern Strategy (NetworkService, StorageService) pour définir quel type et donc quelle stratégie de service utiliser (exemple avec les services AlamofireNetwork, JustNetwork - qui ne sont pas implémentés).
 * Utilisation partielle de [RxSwift](https://github.com/ReactiveX/RxSwift) permettant une déclaration de séquences symbolisant les traitements asynchrones de manière séquentielle.
