@@ -15,12 +15,13 @@ Affichage de la météo de Paris avec OpenWeatherMap.
 * Coder une vraie vue détail qui ressemble à quelque chose :-)
 * Configurer [Hero](https://github.com/HeroTransitions/Hero).
 * Externaliser le parsing des objets en dehors du NetworkService.
+* Créer un TextManager pour la gestion des patterns de NSAttributedString
 * Ajouter la sauvegarde des endpoints utilisé pour être synchro avec l’ensemble de l’état d’une liste de forecast sauvegardée. (Utile si le endpoint est paginé, évidemment).
 * Code Rx à 100% (factoriser la partie Rx des managers. Utiliser une version Rx du NetworkService et StorageService, Utiliser des bindings pour les variables).
 * Tests Rx avec [RxTests](https://cocoapods.org/pods/RxTests) et [RxBlocking](https://cocoapods.org/pods/RxBlocking).
 * Code coverage à 100% (Tester l'ensemble du viewModel), actuellement 59%.
 * Préparer des UIView / Xibs, IBInspectable & IBDesignable et les intégrer dans un framework permettant d’enrayer les erreurs de builds en cycle (malgré l’option désactivée dans Xcode, les IBInspectable et IBDesignable peuvent causer ces builds en cycle).
-* Utiliser des icons Lottie
+* Utiliser des icons [Lottie](https://github.com/airbnb/lottie-ios)
 * Utilisation de la Restauration (RestaurationId) pour démarrer encore plus rapidement l’application avec les dernières données
 * Google Sheet pour les traductions + App Script pour la génération des fichiers de localization
 
